@@ -69,5 +69,10 @@ func getAvailableCommands() commandsMap {
 			description: "Try to catch a pokemons. The chance of caught the pokemon decrease with the pokemon's base expirience",
 			callback:    commandCatch,
 		},
+		"inspect": {
+			name:        "inspect",
+			description: "Use pokedex to see pokemon stats",
+			callback:    commandInspect,
+		},
 	}
 }
