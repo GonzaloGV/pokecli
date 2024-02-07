@@ -74,5 +74,10 @@ func getAvailableCommands() commandsMap {
 			description: "Use pokedex to see pokemon stats",
 			callback:    commandInspect,
 		},
+		"pokedex": {
+			name:        "pokedex",
+			description: "show pokemons in pokedex",
+			callback:    commandPokedex,
+		},
 	}
 }
