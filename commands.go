@@ -11,6 +11,7 @@ func createContext() context {
 		availableCommands: getAvailableCommands(),
 		client:            pokeapi.NewClient(time.Duration(time.Duration.Seconds(5))),
 		mapState:          mapState{},
+		pokedex:           map[string]pokeapi.PokemonResponse{},
 	}
 
 }
@@ -27,6 +28,7 @@ type context struct {
 	availableCommands commandsMap
 	client            pokeapi.Client
 	mapState          mapState
+	pokedex           map[string]pokeapi.PokemonResponse
 }
 
 type cliCommand struct {
@@ -61,6 +63,11 @@ func getAvailableCommands() commandsMap {
 			name:        "explore",
 			description: "Explore pokemons in a given location",
 			callback:    commandExplore,
+		},
+		"catch": {
+			name:        "catch",
+			description: "Try to catch a pokemons. The chance of caught the pokemon decrease with the pokemon's base expirience",
+			callback:    commandCatch,
 		},
 	}
 }
